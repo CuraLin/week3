@@ -1,0 +1,76 @@
+ .font-l {
+     font-size: $font-l;
+ }
+
+ .font-m {
+     font-size: $font-m;
+ }
+
+ .font-s {
+     font-size: $font-s;
+ }
+
+ .lh-l {
+     line-height: $lh-l;
+ }
+
+ .lh-m {
+     line-height: $lh-m;
+ }
+
+ .lh-s {
+     line-height: $lh-s;
+ }
+.primary{
+    color: $primary;
+
+}
+ .secondary {
+     color: $secondary;
+ }
+
+ .danger {
+     color: $danger;
+ }
+
+ 
+ .mb-l {
+     margin-bottom: $mb-l;
+ }
+
+ .mb-m {
+     margin-bottom: $mb-m;
+ }
+
+ .mb-s {
+     margin-bottom: $mb-s;
+ }
+.pos-a{
+    position: absolute;
+}
+.pos-r{
+    position: relative;
+}
+.df{
+    display: flex;
+}
+.jcc{
+    justify-content: center;
+}
+.jcsb{
+    justify-content: space-between;
+}
+.aic{
+    align-items: center;
+}
+.bold{
+    font-weight: 700;
+}
+.hover:hover{
+    border-bottom: 1px solid $light;
+}
+.container{
+    max-width: 1296px;
+    margin: 0 auto;
+}
+

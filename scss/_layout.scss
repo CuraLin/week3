@@ -1,0 +1,219 @@
+// header
+.header {
+    background: $danger;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    .header__title {
+        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/logo-white.png?raw=true);
+        background-size: contain;
+        width: 80px;
+        height: 48px;
+        text-indent: 101%;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .header__nav {
+        a {
+            color: $light;
+        }
+
+        .header__nav__list:not(:last-child) {
+            margin-right: 64px;
+        }
+    }
+}
+
+// header-rwd
+@media (max-width:992px) {
+    .header {
+        .container {
+            padding-right: 12px;
+            padding-left: 12px;
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .container {
+        flex-wrap: wrap;
+    }
+
+
+
+    .header {
+        padding: 0px;
+
+        .container {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+
+        .header__title {
+            margin: 16px 0px 16px 12px;
+        }
+
+        .header__nav {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+
+            a {
+                padding: 12px 0;
+
+                .hover:hover {
+                    border-bottom: none;                    
+                }
+            }
+
+            .header__nav__list:not(:last-child) {
+                margin-right: 0;
+            }
+
+            .header__nav__list {
+                text-align: center;
+                width: 50%;
+                border: 1px solid $light;
+            }
+        }
+    }
+}
+
+// header-end
+
+
+.content {
+    height: 200px;
+}
+
+
+// footer
+.footer--bg {
+    background: $danger;
+    color: $light;
+
+    a {
+        color: $light;
+    }
+}
+
+.footer {
+    padding-top: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid $light;
+
+    .footer__menu {
+        margin-bottom: 36px;
+
+        li:not(:last-child) {
+            margin-right: 48px;
+        }
+    }
+
+    address {
+        a {
+            font-size: 36px;
+        }
+
+        a:nth-child(1) {
+            margin-bottom: 8px;
+        }
+
+        .address--image {
+            font-size: 36px;
+            margin-right: 22px;
+
+        }
+    }
+
+    .footer__social {
+        img {
+            width: 48px;
+            height: 48px;
+        }
+
+        a:not(:last-child) {
+            margin-right: 32px;
+        }
+    }
+}
+
+.copyright {
+    padding: 32px 0;
+
+    p {
+        font-family: 'Roboto', sans-serif
+    }
+
+    a:nth-child(1) {
+        margin-right: 48px;
+    }
+}
+
+// footer-RWD
+
+
+@media (max-width:767px) {
+    .footer--bg {
+        .container {
+            padding-right: 12px;
+            padding-left: 12px;
+        }
+    }
+
+    .footer {
+        padding-top: 24px;
+        padding-bottom: 24px;
+
+        address {
+
+            a {
+                font-size: 16px;
+            }
+
+            .address--image {
+                font-size: 18px;
+                margin-right: 10px;
+
+            }
+        }
+
+        .footer__menu {
+            display: none;
+        }
+
+        .footer__social {
+            align-self: flex-start;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+
+            a:not(:last-child) {
+                margin-right: 8px;
+            }
+        }
+    }
+
+    .copyright {
+        padding-top: 16px;
+        padding-bottom: 24px;
+        flex-direction: column;
+
+        p {
+            margin-bottom: 8px;
+        }
+
+        .copyright__law {
+            flex-direction: column;
+
+            a:nth-child(1) {
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+
+// footer-end
