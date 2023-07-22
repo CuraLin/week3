@@ -19,6 +19,10 @@
             color: $light;
         }
 
+        .header__nav__list {
+            font-size: 20px;
+        }
+
         .header__nav__list:not(:last-child) {
             margin-right: 64px;
         }
@@ -34,7 +38,7 @@
 
 // header-rwd
 @media (max-width:992px) {
-    .header {
+    .header {      
         .container {
             padding-right: 36px;
             padding-left: 36px;
@@ -135,6 +139,7 @@
     }
 
     .footer__social {
+        align-self: flex-start;
         img {
             width: 48px;
             height: 48px;
@@ -153,6 +158,10 @@
         font-family: 'Roboto', sans-serif
     }
 
+    a {
+        font-size: 14px;
+    }
+
     a:nth-child(1) {
         margin-right: 48px;
     }
@@ -164,6 +173,24 @@
         .container {
             padding-right: 36px;
             padding-left: 36px;
+        }
+    }
+
+    .footer {
+        .footer__menu {
+            margin-bottom: 24px;
+        }
+
+        .footer__social {        
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+
+            a:not(:last-child) {
+                margin-right: 16px;
+            }
         }
     }
 }
