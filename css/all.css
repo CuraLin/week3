@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -243,6 +243,21 @@ a {
           align-items: center;
 }
 
+.df-c {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.align-end {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
 .bold {
   font-weight: 700;
 }
@@ -251,9 +266,23 @@ a {
   border-bottom: 1px solid #FFFFFF;
 }
 
+.h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #650300;
+  text-align: center;
+}
+
 .container {
-  max-width: 1296px;
+  max-width: 1320px;
   margin: 0 auto;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.ptb-80 {
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .header {
@@ -280,20 +309,14 @@ a {
   margin-right: 64px;
 }
 
-@media (max-width: 1330px) {
-  .container {
-    padding-right: 72px;
-    padding-left: 72px;
-  }
-}
 @media (max-width: 992px) {
-  .header .container {
-    padding-right: 36px;
-    padding-left: 36px;
+  .container {
+    max-width: 720px;
   }
 }
 @media (max-width: 767px) {
   .container {
+    max-width: 373px;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
@@ -301,6 +324,7 @@ a {
     padding: 0px;
   }
   .header .container {
+    max-width: 100%;
     padding-right: 0px;
     padding-left: 0px;
   }
@@ -389,10 +413,6 @@ a {
 }
 
 @media (max-width: 992px) {
-  .footer--bg .container {
-    padding-right: 36px;
-    padding-left: 36px;
-  }
   .footer .footer__menu {
     margin-bottom: 24px;
   }
@@ -405,10 +425,6 @@ a {
   }
 }
 @media (max-width: 767px) {
-  .footer--bg .container {
-    padding-right: 12px;
-    padding-left: 12px;
-  }
   .footer {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -454,4 +470,114 @@ a {
   .copyright .copyright__law a:nth-child(1) {
     margin-bottom: 8px;
   }
+}
+.banner {
+  background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/home-header.png?raw=true);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.banner .container {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.banner .banner__info {
+  padding-top: 296px;
+  padding-bottom: 296px;
+}
+.banner .banner__info h3 {
+  font-size: 36px;
+}
+.banner .banner__info h2 {
+  font-size: 64px;
+  padding-bottom: 4px;
+  font-weight: 700;
+}
+.banner .banner__info h2,
+.banner .banner__info h3 {
+  color: #650300;
+}
+.banner .banner__info .button {
+  color: #FFFFFF;
+  font-size: 20px;
+  padding: 6px 12px;
+  background: #AA0601;
+  font-weight: 500;
+}
+
+.intro {
+  background: #FBF2F2;
+}
+.intro h2 {
+  margin-bottom: 32px;
+}
+
+.intro__menu .intro__list {
+  max-width: 25%;
+  text-align: center;
+}
+.intro__menu .intro__list img {
+  max-height: 83.83px;
+  margin-bottom: 24px;
+}
+.intro__menu .intro__list h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #650300;
+}
+.intro__menu .intro__list p {
+  text-align: start;
+}
+.intro__menu .intro__list:not(:last-child) {
+  margin-right: 24px;
+}
+
+.product .h2 {
+  margin-bottom: 48px;
+}
+.product .product__list {
+  max-width: 33.333%;
+}
+.product .product__list:not(:last-child) {
+  margin-right: 24px;
+}
+.product .product__list img {
+  margin-bottom: 8px;
+}
+.product .product__list .h2 {
+  color: #AA0601;
+}
+
+.linkage {
+  background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/index-bg.png?raw=true);
+  background-size: cover;
+}
+.linkage .h2 {
+  margin-bottom: 48px;
+  color: #FFFFFF;
+}
+.linkage .linkage__card {
+  background: #FFFFFF;
+}
+.linkage .linkage__card .h2 {
+  color: #AA0601;
+  margin: 8px 0;
+}
+.linkage .linkage__card .linkage__card__item {
+  max-width: 50%;
+}
+
+.recommed .h2 {
+  margin-bottom: 48px;
+}
+.recommed .recommed__card__item {
+  max-width: 25%;
+  -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1607843137);
+          box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1607843137);
+  border: 1px solid #DEE2E6;
+  border-radius: 4px;
+}
+.recommed .recommed__card__item:not(:last-child) {
+  margin-right: 24px;
 }

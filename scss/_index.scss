@@ -1,0 +1,143 @@
+.banner {
+    background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/home-header.png?raw=true);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+    .container {
+        justify-content: flex-end;
+    }
+
+    .banner__info {
+        padding-top: 296px;
+        padding-bottom: 296px;
+
+        h3 {
+            font-size: 36px;
+
+        }
+
+        h2 {
+            font-size: 64px;
+            padding-bottom: 4px;
+            font-weight: 700;
+        }
+
+        h2,
+        h3 {
+            color: $primary;
+        }
+
+        .button {
+            color: $light;
+            font-size: 20px;
+            padding: 6px 12px;
+            background: $danger;
+            font-weight: 500;
+        }
+    }
+}
+
+.intro {
+    background: $secondary;
+
+    h2 {
+
+        margin-bottom: 32px;
+    }
+
+}
+
+.intro__menu {
+    .intro__list {
+        max-width: 25%;
+        text-align: center;
+
+        img {
+            max-height: 83.83px;
+            margin-bottom: 24px;
+
+        }
+
+        h3 {
+            font-size: $font-s;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: $primary;
+
+        }
+
+        p {
+            text-align: start;
+        }
+
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+}
+
+.product {
+    .h2 {
+        margin-bottom: 48px;
+    }
+
+    .product__list {
+
+
+        max-width: 33.333%;
+
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+
+        img {
+            margin-bottom: 8px;
+        }
+
+        .h2 {
+            color: $danger;
+        }
+    }
+}
+
+.linkage {
+    background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/index-bg.png?raw=true);
+    background-size: cover;
+
+    .h2 {
+        margin-bottom: 48px;
+        color: $light;
+    }
+
+    .linkage__card {
+        background: $light;
+
+        .h2 {
+            color: $danger;
+            margin: 8px 0;
+        }
+
+        .linkage__card__item {
+
+            max-width: 50%;
+        }
+    }
+}
+
+.recommed {
+    .h2 {
+        margin-bottom: 48px;
+    }
+
+    .recommed__card__item {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+
+        max-width:25%;
+        box-shadow: 0px 2px 6px #00000029;
+        border: 1px solid #DEE2E6;
+        border-radius: 4px;
+    }
+}
