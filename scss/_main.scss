@@ -45,6 +45,9 @@
  .mb-s {
      margin-bottom: $mb-s;
  }
+ .mb-16{
+    margin-bottom: 16px;
+ }
 .pos-a{
     position: absolute;
 }
@@ -81,6 +84,7 @@
     font-weight: 700;
     color: $primary;
     text-align: center;
+    margin-bottom: 48px;
 }
 .container{
     max-width: 1320px;
@@ -91,4 +95,13 @@
 .ptb-80{
     padding-top: 80px;
     padding-bottom: 80px;
+}
+.w-full{
+    width: 100%;
+}
+.indent-12{
+    text-indent: 12px;
+}
+.h-36{
+    height: 36px;
 }

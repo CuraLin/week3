@@ -1,3 +1,5 @@
+// banner
+
 .banner {
     background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/home-header.png?raw=true);
     background-size: cover;
@@ -35,8 +37,65 @@
             background: $danger;
             font-weight: 500;
         }
+
+        .button--hover:hover {
+            background: $light;
+            color: $danger;
+        }
     }
 }
+
+@media(max-width:992px) {
+    .banner {
+        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/home-header-sm.png?raw=true);
+    }
+}
+
+
+
+@media(max-width:767px) {
+
+
+    .banner {
+        background-size: contain;
+        height: 396px;
+
+        .banner__info {
+            padding-top: 144px;
+            padding-bottom: 144px;
+
+            h3 {
+                font-size: 16px;
+
+            }
+
+            h2 {
+                font-size: $font-s;
+                padding-bottom: 8px;
+                font-weight: 700;
+            }
+
+        }
+    }
+}
+
+// main rwd
+@media(max-width:767px) {
+    .ptb-80 {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .h2 {
+        font-size: $font-s;
+        margin-bottom: 24px;
+    }
+
+}
+
+// banner-end
+
+// intro
 
 .intro {
     background: $secondary;
@@ -77,10 +136,58 @@
     }
 }
 
-.product {
-    .h2 {
-        margin-bottom: 48px;
+@media(max-width:992px) {
+    .intro__menu {
+        flex-wrap: wrap;
+
+        .intro__list {
+            max-width: 46%;
+
+            img {
+                max-height: auto;
+                margin-bottom: 24px;
+
+            }
+
+            &:not(:last-child) {
+                margin-right: 0px;
+            }
+
+            &:nth-child(odd) {
+                margin-right: 24px;
+            }
+
+        }
     }
+}
+
+@media(max-width:767px) {
+
+    .intro__menu {
+
+
+        .intro__list {
+            max-width: 100%;
+
+            &:nth-child(odd) {
+                margin-right: 0px;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 32px;
+            }
+
+        }
+    }
+}
+
+// intro-end
+
+// product
+
+
+.product {
+
 
     .product__list {
 
@@ -101,43 +208,206 @@
     }
 }
 
+@media(max-width:992px) {
+    .product__menu {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .product__list {
+            max-width: 50%;
+
+
+        }
+    }
+}
+
+
+
+// product-end
+
+// linkage
+
 .linkage {
     background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/index-bg.png?raw=true);
     background-size: cover;
 
     .h2 {
-        margin-bottom: 48px;
+
         color: $light;
     }
 
-    .linkage__card {
-        background: $light;
 
+}
+
+.linkage__card {
+    background: $light;
+
+    .h2 {
+        color: $danger;
+        margin: 8px 0;
+    }
+
+    .linkage__card__item {
         .h2 {
-            color: $danger;
-            margin: 8px 0;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+            font-style: italic;
         }
+
+        max-width: 50%;
+    }
+}
+
+@media(max-width:992px) {
+    .linkage__card {
+        flex-wrap: wrap;
 
         .linkage__card__item {
 
-            max-width: 50%;
+
+            max-width: 100%;
         }
     }
 }
 
-.recommed {
-    .h2 {
-        margin-bottom: 48px;
+
+
+// linkage-end
+
+// recommed
+
+.recommed__card__item {
+    max-width: 25%;
+    box-shadow: 0px 2px 6px #00000029;
+    border: 1px solid #DEE2E6;
+    border-radius: 4px;
+
+    &:not(:last-child) {
+        margin-right: 24px;
     }
 
-    .recommed__card__item {
-        &:not(:last-child) {
-            margin-right: 24px;
+    &__text {
+        padding: 16px;
+        height: 205px;
+
+        &--gray {
+            color: #707070;
+            font-size: 14px;
         }
 
-        max-width:25%;
-        box-shadow: 0px 2px 6px #00000029;
-        border: 1px solid #DEE2E6;
-        border-radius: 4px;
+        h3 {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+    }
+}
+
+@media(max-width:992px) {
+    .recommed__card {
+        flex-wrap: wrap;
+
+        .recommed__card__item {
+            max-width: 48%;
+            margin-bottom: 24px;
+
+            &:not(:last-child) {
+                margin-right: 0px;
+            }
+
+            &:nth-child(odd) {
+                margin-right: 24px;
+            }
+
+        }
+    }
+
+}
+
+@media(max-width:767px) {
+    .recommed__card {
+
+
+        .recommed__card__item {
+            max-width: 100%;
+            margin-bottom: 16px;
+
+
+            &:nth-child(odd) {
+                margin-right: 0px;
+            }
+
+        }
+    }
+}
+
+// recommed-end
+.contact {
+    background: $secondary;
+
+    .container {
+        max-width: 660px;
+    }
+
+    p {
+        margin-bottom: 24px;
+        font-size: 20px;
+    }
+
+    textarea {
+        height: 136px;
+        padding-top: 6px;
+    }
+
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .contact__check__agree {
+        margin-right: 4px;
+        cursor: pointer;
+    }
+
+    .contact__check__label {
+        margin-bottom: 0;
+    }
+
+    .contact--button {
+        width: 416px;
+        font-weight: 700;
+        background: $danger;
+        color: #fff;
+        padding: 16px 0;
+        display: block;
+        margin: 0 auto;
+        cursor: pointer;
+        margin-top: 48px;
+    }
+
+}
+
+@media(max-width:992px) {
+    .contact {
+
+        .contact--button {
+            width: 336px;
+
+        }
+    }
+}
+
+
+@media(max-width:767px) {
+    .contact {
+
+        .contact--button {
+            width: 100%;
+            margin-top: 24px;
+        }
+
+        .contact__check {
+            align-items: flex-start;
+        }
     }
 }
