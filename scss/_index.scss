@@ -57,8 +57,7 @@
 
 
     .banner {
-        background-size: contain;
-        height: 396px;
+        background-position: center;
 
         .banner__info {
             padding-top: 144px;
@@ -204,23 +203,38 @@
 
         .h2 {
             color: $danger;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+            font-style: italic;
         }
     }
 }
 
 @media(max-width:992px) {
     .product__menu {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
 
         .product__list {
-            max-width: 50%;
+            max-width: 48%;
 
+            &:not(:last-child) {
+                margin-right: 0px;
+            }
 
         }
     }
 }
 
+@media(max-width:767px) {
+    .product__menu {
+
+        .product__list {
+            max-width: 100%;
+
+        }
+    }
+}
 
 
 // product-end
