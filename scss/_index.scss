@@ -1,3 +1,19 @@
+// main rwd
+
+@include mobile {
+    .ptb-80 {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .h2 {
+        font-size: $font-s;
+        margin-bottom: 24px;
+    }
+}
+
+
+
 // banner
 
 .banner {
@@ -6,29 +22,58 @@
     background-repeat: no-repeat;
 
 
+
+    @include pad {
+        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/home-header-sm.png?raw=true);
+    }
+
+    @include mobile {
+        background-position: center;
+    }
+
     .container {
+        height: 787px;
         justify-content: flex-end;
+
+        @include mobile {
+            height: 396px;
+        }
     }
 
     .banner__info {
-        padding-top: 296px;
-        padding-bottom: 296px;
+        // padding-top: 296px;
+        // padding-bottom: 296px;
+
+        @include mobile {
+            padding-top: 144px;
+            padding-bottom: 144px;
+        }
 
         h3 {
             font-size: 36px;
 
+            @include mobile {
+                font-size: 16px;
+            }
         }
 
         h2 {
             font-size: 64px;
             padding-bottom: 4px;
             font-weight: 700;
+
+            @include mobile {
+                font-size: $font-s;
+                padding-bottom: 8px;
+                font-weight: 700;
+            }
         }
 
         h2,
         h3 {
             color: $primary;
         }
+
 
         .button {
             color: $light;
@@ -45,54 +90,10 @@
     }
 }
 
-@media(max-width:992px) {
-    .banner {
-        background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/home-header-sm.png?raw=true);
-    }
-}
-
-
-
-@media(max-width:767px) {
-
-
-    .banner {
-        background-position: center;
-
-        .banner__info {
-            padding-top: 144px;
-            padding-bottom: 144px;
-
-            h3 {
-                font-size: 16px;
-
-            }
-
-            h2 {
-                font-size: $font-s;
-                padding-bottom: 8px;
-                font-weight: 700;
-            }
-
-        }
-    }
-}
-
-// main rwd
-@media(max-width:767px) {
-    .ptb-80 {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-
-    .h2 {
-        font-size: $font-s;
-        margin-bottom: 24px;
-    }
-
-}
-
 // banner-end
+
+
+
 
 // intro
 
@@ -107,13 +108,30 @@
 }
 
 .intro__menu {
+    @include pad {
+        flex-wrap: wrap;
+    }
+
     .intro__list {
         max-width: 25%;
         text-align: center;
 
+        @include pad {
+            max-width: 46%;
+        }
+
+        @include mobile {
+            max-width: 100%;
+        }
+
         img {
             max-height: 83.83px;
             margin-bottom: 24px;
+
+            @include pad {
+                max-height: auto;
+                margin-bottom: 24px;
+            }
 
         }
 
@@ -131,70 +149,60 @@
 
         &:not(:last-child) {
             margin-right: 24px;
-        }
-    }
-}
 
-@media(max-width:992px) {
-    .intro__menu {
-        flex-wrap: wrap;
-
-        .intro__list {
-            max-width: 46%;
-
-            img {
-                max-height: auto;
-                margin-bottom: 24px;
-
-            }
-
-            &:not(:last-child) {
+            @include pad {
                 margin-right: 0px;
             }
 
-            &:nth-child(odd) {
+            @include mobile {
+                margin-bottom: 32px;
+            }
+        }
+
+        &:nth-child(odd) {
+            @include pad {
                 margin-right: 24px;
             }
 
-        }
-    }
-}
-
-@media(max-width:767px) {
-
-    .intro__menu {
-
-
-        .intro__list {
-            max-width: 100%;
-
-            &:nth-child(odd) {
+            @include mobile {
                 margin-right: 0px;
             }
 
-            &:not(:last-child) {
-                margin-bottom: 32px;
-            }
-
         }
     }
 }
+
 
 // intro-end
 
 // product
 
 
-.product {
-
+.product__menu {
+    @include pad {
+        flex-direction: column;
+        align-items: center;
+    }
 
     .product__list {
 
 
         max-width: 33.333%;
 
+        @include pad {
+            max-width: 48%;
+        }
+
+        @include mobile {
+            max-width: 100%;
+        }
+
         &:not(:last-child) {
             margin-right: 24px;
+
+            @include pad {
+                margin-right: 0px;
+            }
         }
 
         img {
@@ -210,33 +218,6 @@
     }
 }
 
-@media(max-width:992px) {
-    .product__menu {
-        flex-direction: column;
-        align-items: center;
-
-        .product__list {
-            max-width: 48%;
-
-            &:not(:last-child) {
-                margin-right: 0px;
-            }
-
-        }
-    }
-}
-
-@media(max-width:767px) {
-    .product__menu {
-
-        .product__list {
-            max-width: 100%;
-
-        }
-    }
-}
-
-
 // product-end
 
 // linkage
@@ -244,6 +225,7 @@
 .linkage {
     background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/index-bg.png?raw=true);
     background-size: cover;
+    background-repeat: no-repeat;
 
     .h2 {
 
@@ -256,12 +238,20 @@
 .linkage__card {
     background: $light;
 
+    @include pad {
+        flex-wrap: wrap;
+    }
+
     .h2 {
         color: $danger;
         margin: 8px 0;
     }
 
     .linkage__card__item {
+        @include pad {
+            max-width: 100%;
+        }
+
         .h2 {
             font-family: 'Roboto', sans-serif;
             font-weight: 900;
@@ -272,84 +262,68 @@
     }
 }
 
-@media(max-width:992px) {
-    .linkage__card {
-        flex-wrap: wrap;
-
-        .linkage__card__item {
-
-
-            max-width: 100%;
-        }
-    }
-}
-
 
 
 // linkage-end
 
 // recommed
-
-.recommed__card__item {
-    max-width: 25%;
-    box-shadow: 0px 2px 6px #00000029;
-    border: 1px solid #DEE2E6;
-    border-radius: 4px;
-
-    &:not(:last-child) {
-        margin-right: 24px;
-    }
-
-    &__text {
-        padding: 16px;
-        height: 205px;
-
-        &--gray {
-            color: #707070;
-            font-size: 14px;
-        }
-
-        h3 {
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-    }
-}
-
-@media(max-width:992px) {
-    .recommed__card {
+.recommed__card {
+    @include pad {
         flex-wrap: wrap;
+    }
 
-        .recommed__card__item {
+    .recommed__card__item {
+        max-width: 25%;
+        box-shadow: 0px 2px 6px #00000029;
+        border: 1px solid #DEE2E6;
+        border-radius: 4px;
+
+        @include pad {
             max-width: 48%;
             margin-bottom: 24px;
+        }
 
-            &:not(:last-child) {
+        @include mobile {
+            max-width: 100%;
+            margin-bottom: 16px;
+        }
+
+        &:not(:last-child) {
+            margin-right: 24px;
+
+            @include pad {
                 margin-right: 0px;
             }
+        }
 
-            &:nth-child(odd) {
+        &:nth-child(odd) {
+            @include pad {
                 margin-right: 24px;
             }
 
-        }
-    }
-
-}
-
-@media(max-width:767px) {
-    .recommed__card {
-
-
-        .recommed__card__item {
-            max-width: 100%;
-            margin-bottom: 16px;
-
-
-            &:nth-child(odd) {
+            @include mobile {
                 margin-right: 0px;
             }
 
+        }
+
+        &__text {
+            padding: 16px;
+            height: 205px;
+
+            // &__header {
+            //     margin-bottom: 48px;
+            // }
+
+            &--gray {
+                color: #707070;
+                font-size: 14px;
+            }
+
+            h3 {
+                margin-bottom: 8px;
+                font-weight: 500;
+            }
         }
     }
 }
@@ -370,6 +344,7 @@
     textarea {
         height: 136px;
         padding-top: 6px;
+        resize: none;
     }
 
 
@@ -388,40 +363,31 @@
     }
 
     .contact--button {
-        width: 416px;
+        // width: 416px;
         font-weight: 700;
         background: $danger;
         color: #fff;
-        padding: 16px 0;
+        padding: 16px 176px;
         display: block;
         margin: 0 auto;
         cursor: pointer;
         margin-top: 48px;
-    }
 
-}
-
-@media(max-width:992px) {
-    .contact {
-
-        .contact--button {
-            width: 336px;
-
+        @include pad {
+            padding: 16px 136px;
         }
-    }
-}
 
-
-@media(max-width:767px) {
-    .contact {
-
-        .contact--button {
+        @include mobile {
             width: 100%;
             margin-top: 24px;
         }
+    }
 
-        .contact__check {
+    .contact__check {
+        @include mobile {
             align-items: flex-start;
         }
+
     }
+
 }

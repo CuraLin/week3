@@ -1,12 +1,58 @@
+// 通用mixin
+@mixin pad {
+    @media (max-width:992px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width:767px) {
+        @content;
+    }
+}
+
+@include pad {
+    .container {
+        max-width: 720px;
+
+    }
+}
+
+@include mobile {
+    .container {
+        max-width: 373px;
+        flex-wrap: wrap;
+    }
+}
+
+
+
 // header
 .header {
     background: $danger;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    @include mobile {
+        padding: 0px;
+    }
+
+    .container {
+        @include mobile {
+            max-width: 100%;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+    }
 
     .header__title {
+        @include mobile {
+            margin: 16px 0px 16px 12px;
+        }
+
         background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/logo-white.png?raw=true);
         background-size: contain;
+        background-repeat: no-repeat;
         width: 80px;
         height: 48px;
         text-indent: 101%;
@@ -15,75 +61,49 @@
         cursor: pointer;
     }
 
-    .header__nav {
-        a {
-            color: $light;
-        }
 
-        .header__nav__list {
-            font-size: 20px;
-        }
-
-        .header__nav__list:not(:last-child) {
-            margin-right: 64px;
-        }
-    }
 }
 
-
-
-// header-rwd
-@media (max-width:992px) {
-    .container {
-        max-width: 720px;
-
-    }
-}
-
-@media (max-width:767px) {
-    .container {
-        max-width: 373px;
+.header__nav {
+    @include mobile {
         flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
     }
 
-
-
-    .header {
-        padding: 0px;
-
-        .container {
-            max-width: 100%;
-            padding-right: 0px;
-            padding-left: 0px;
+    a {
+        @include mobile {
+            padding: 12px 0;
         }
 
-        .header__title {
-            margin: 16px 0px 16px 12px;
+        color: $light;
+        padding-top: 13px;
+        padding-bottom: 13px;
+
+        .hover:hover {
+            @include mobile {
+                border-bottom: none;
+            }
+
+        }
+    }
+
+    .header__nav__list {
+        @include mobile {
+            text-align: center;
+            width: 50%;
+            border: 1px solid $light;
         }
 
-        .header__nav {
-            flex-wrap: wrap;
-            justify-content: space-between;
-            width: 100%;
+        font-size: 20px;
+    }
 
-            a {
-                padding: 12px 0;
-
-                .hover:hover {
-                    border-bottom: none;
-                }
-            }
-
-            .header__nav__list:not(:last-child) {
-                margin-right: 0;
-            }
-
-            .header__nav__list {
-                text-align: center;
-                width: 50%;
-                border: 1px solid $light;
-            }
+    .header__nav__list:not(:last-child) {
+        @include mobile {
+            margin-right: 0;
         }
+
+        margin-right: 64px;
     }
 }
 
@@ -100,20 +120,51 @@
     background: $danger;
     color: $light;
 
+    .container {
+        @include mobile {
+            max-width: initial;
+
+        }
+    }
+
     a {
         color: $light;
     }
 }
+
+
+
+
 
 .footer {
     padding-top: 48px;
     padding-bottom: 32px;
     border-bottom: 1px solid $light;
 
+    @include mobile {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
     .footer__menu {
+
         margin-bottom: 36px;
 
+        @include pad {
+            margin-bottom: 24px;
+
+        }
+
+        @include mobile {
+            display: none;
+        }
+
         li:not(:last-child) {
+            @include pad {
+                margin-right: 16px;
+
+            }
+
             margin-right: 48px;
         }
     }
@@ -121,6 +172,12 @@
     address {
         a {
             font-size: 36px;
+
+            @include mobile {
+
+                font-size: 16px;
+
+            }
         }
 
         a:nth-child(1) {
@@ -131,19 +188,44 @@
             font-size: 36px;
             margin-right: 22px;
 
+            @include mobile {
+                font-size: 18px;
+                margin-right: 10px;
+            }
+
         }
     }
 
     .footer__social {
         align-self: flex-start;
 
+        @include mobile {
+            align-self: flex-start;
+        }
+
         img {
             width: 48px;
             height: 48px;
+
+            @include pad {
+                width: 40px;
+                height: 40px;
+            }
+
+            @include mobile {
+                width: 24px;
+                height: 24px;
+
+            }
         }
 
-        a:not(:last-child) {
+        li:not(:last-child) {
             margin-right: 32px;
+
+            @include mobile {
+                margin-right: 8px;
+
+            }
         }
     }
 }
@@ -151,96 +233,42 @@
 .copyright {
     padding: 32px 0;
 
+    @include mobile {
+        padding-top: 16px;
+        padding-bottom: 24px;
+        flex-direction: column;
+    }
+
     p {
-        font-family: 'Roboto', sans-serif
+        font-family: 'Roboto', sans-serif;
+
+        @include mobile {
+
+            margin-bottom: 8px;
+
+        }
     }
 
     a {
         font-size: 14px;
     }
 
-    a:nth-child(1) {
-        margin-right: 48px;
-    }
-}
-
-// footer-RWD
-@media (max-width:992px) {
-
-    .footer {
-        .footer__menu {
-            margin-bottom: 24px;
-        }
-
-        .footer__social {
-
-            img {
-                width: 40px;
-                height: 40px;
-            }
-
-            a:not(:last-child) {
-                margin-right: 16px;
-            }
-        }
-    }
-}
-
-@media (max-width:767px) {
-
-
-    .footer {
-        padding-top: 24px;
-        padding-bottom: 24px;
-
-        address {
-
-            a {
-                font-size: 16px;
-            }
-
-            .address--image {
-                font-size: 18px;
-                margin-right: 10px;
-
-            }
-        }
-
-        .footer__menu {
-            display: none;
-        }
-
-        .footer__social {
-            align-self: flex-start;
-
-            img {
-                width: 24px;
-                height: 24px;
-            }
-
-            a:not(:last-child) {
-                margin-right: 8px;
-            }
-        }
-    }
-
-    .copyright {
-        padding-top: 16px;
-        padding-bottom: 24px;
-        flex-direction: column;
-
-        p {
-            margin-bottom: 8px;
-        }
-
-        .copyright__law {
+    .copyright__law {
+        @include mobile {
             flex-direction: column;
+        }
 
-            a:nth-child(1) {
+        a:nth-child(1) {
+            margin-right: 48px;
+
+            @include mobile {
                 margin-bottom: 8px;
             }
         }
+
     }
+
+
 }
 
 // footer-end
